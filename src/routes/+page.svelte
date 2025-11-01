@@ -1,6 +1,6 @@
 <script lang="ts">
-		import { onMount, onDestroy } from 'svelte';
-		import { resolve } from '$app/paths';
+	import { onMount, onDestroy } from 'svelte';
+	import { resolve } from '$app/paths';
 	import type {
 		WebGLRenderer,
 		Scene,
@@ -84,11 +84,11 @@
 			}
 
 			vec3 palette(float t) {
-				vec3 a = vec3(0.10, 0.20, 0.70);
-				vec3 b = vec3(0.90, 0.30, 0.20);
-				vec3 c = vec3(0.20, 0.80, 0.60);
-				vec3 d = vec3(0.50, 0.20, 0.90);
-				return a + b * cos(PI * (c * t + d));
+				vec3 base = vec3(0.80, 0.88, 0.98);
+				vec3 wave = vec3(0.30, 0.40, 0.65);
+				vec3 mod = vec3(0.18, 0.24, 0.30);
+				vec3 shift = vec3(0.00, 0.35, 0.72);
+				return base + wave * cos(PI * (mod * t + shift));
 			}
 
 			void main() {
@@ -113,12 +113,12 @@
 				}
 
 				float intensity = n + ripple * 0.45;
-				vec3 color = palette(intensity + dist * 0.35);
+				vec3 color = palette(intensity + dist * 0.28);
 
-				color = mix(color, vec3(0.08, 0.06, 0.14), smoothstep(0.0, 0.9, dist));
-				color += 0.08 * vec3(cos((centeredUv.x + time) * 3.0), sin((centeredUv.y - time) * 3.5), sin((centeredUv.x + centeredUv.y + time) * 2.5));
+				color = mix(color, vec3(0.97, 0.95, 0.99), smoothstep(0.0, 0.85, dist));
+				color += 0.06 * vec3(cos((centeredUv.x + time) * 2.6), sin((centeredUv.y - time) * 3.1), sin((centeredUv.x + centeredUv.y + time) * 2.1));
 
-				gl_FragColor = vec4(color, 0.92);
+				gl_FragColor = vec4(color, 0.9);
 			}
 		`;
 
@@ -132,20 +132,20 @@
 		plane = new THREE.Mesh(geometry, material);
 		scene.add(plane);
 
-			const resize = () => {
-				if (!canvasWrapper || !renderer) return;
-				const { clientWidth, clientHeight } = canvasWrapper;
-				renderer.setSize(clientWidth, clientHeight, false);
-				uniforms.u_resolution.value.set(clientWidth, clientHeight);
-			};
+		const resize = () => {
+			if (!canvasWrapper || !renderer) return;
+			const { clientWidth, clientHeight } = canvasWrapper;
+			renderer.setSize(clientWidth, clientHeight, false);
+			uniforms.u_resolution.value.set(clientWidth, clientHeight);
+		};
 
-			const updateMouse = (event: PointerEvent) => {
-				if (!canvasWrapper) return;
-				const rect = canvasWrapper.getBoundingClientRect();
-				const x = (event.clientX - rect.left) / rect.width;
-				const y = 1 - (event.clientY - rect.top) / rect.height;
-				uniforms.u_mouse.value.set(x, y);
-			};
+		const updateMouse = (event: PointerEvent) => {
+			if (!canvasWrapper) return;
+			const rect = canvasWrapper.getBoundingClientRect();
+			const x = (event.clientX - rect.left) / rect.width;
+			const y = 1 - (event.clientY - rect.top) / rect.height;
+			uniforms.u_mouse.value.set(x, y);
+		};
 
 		const resetMouse = () => {
 			uniforms.u_mouse.value.set(0.5, 0.5);
@@ -304,8 +304,8 @@
 		margin: 0;
 		font-family: 'Inter', 'Noto Sans JP', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
 			sans-serif;
-		color: rgba(240, 245, 255, 0.92);
-		background: radial-gradient(circle at top, #0f1535 0%, #050510 50%, #020207 100%);
+		color: #1e1f36;
+		background: radial-gradient(circle at 18% 10%, #f5f7ff 0%, #e6f3ff 45%, #dbe8ff 100%);
 	}
 
 	:global(*) {
@@ -359,7 +359,7 @@
 		text-transform: uppercase;
 		font-size: 0.75rem;
 		display: inline-block;
-		color: rgba(255, 255, 255, 0.6);
+		color: rgba(108, 116, 172, 0.7);
 		font-weight: 600;
 		font-family: 'Space Grotesk', 'Inter', sans-serif;
 	}
@@ -369,7 +369,7 @@
 		font-size: clamp(2.9rem, 6vw, 5rem);
 		line-height: 1.05;
 		font-family: 'Space Grotesk', 'Inter', sans-serif;
-		color: #f8f9ff;
+		color: #262453;
 	}
 
 	h2 {
@@ -377,13 +377,14 @@
 		line-height: 1.1;
 		margin: 0;
 		font-family: 'Space Grotesk', 'Inter', sans-serif;
+		color: #2e2b63;
 	}
 
 	.hero__lead {
 		margin: 0;
 		font-size: clamp(1.05rem, 2.1vw, 1.35rem);
 		max-width: 40rem;
-		color: rgba(220, 229, 255, 0.82);
+		color: rgba(70, 76, 122, 0.95);
 		line-height: 1.65;
 	}
 
@@ -415,26 +416,26 @@
 	}
 
 	.btn--primary {
-		background: linear-gradient(120deg, #66f7ff 0%, #7a5cff 100%);
-		color: #04040b;
-		box-shadow: 0 12px 35px rgba(102, 247, 255, 0.25);
+		background: linear-gradient(120deg, #9ed9ff 0%, #b4a4ff 100%);
+		color: #0f1430;
+		box-shadow: 0 12px 35px rgba(158, 217, 255, 0.35);
 	}
 
 	.btn--primary:hover {
-		box-shadow: 0 18px 45px rgba(123, 92, 255, 0.35);
+		box-shadow: 0 18px 45px rgba(180, 164, 255, 0.38);
 	}
 
 	.btn--outline {
-		border: 1px solid rgba(120, 131, 255, 0.55);
-		color: rgba(224, 229, 255, 0.9);
-		background: rgba(12, 15, 40, 0.55);
-		backdrop-filter: blur(8px);
+		border: 1px solid rgba(150, 160, 235, 0.6);
+		color: rgba(55, 60, 105, 0.9);
+		background: rgba(255, 255, 255, 0.65);
+		backdrop-filter: blur(10px);
 	}
 
 	.about {
 		position: relative;
 		padding: clamp(6rem, 12vw, 9rem) clamp(1.5rem, 8vw, 8rem);
-		background: linear-gradient(180deg, rgba(12, 12, 24, 0.95) 0%, rgba(6, 6, 14, 1) 100%);
+		background: linear-gradient(180deg, rgba(248, 247, 255, 0.9) 0%, rgba(232, 240, 255, 0.9) 100%);
 		display: grid;
 		gap: 4rem;
 	}
@@ -447,7 +448,7 @@
 
 	.about__intro p {
 		margin: 0;
-		color: rgba(210, 218, 255, 0.8);
+		color: rgba(74, 83, 118, 0.9);
 		line-height: 1.7;
 		font-size: 1.02rem;
 	}
@@ -461,24 +462,24 @@
 	.card {
 		padding: 2rem;
 		border-radius: 1.5rem;
-		background: rgba(17, 20, 42, 0.78);
-		border: 1px solid rgba(100, 120, 255, 0.12);
+		background: rgba(255, 255, 255, 0.78);
+		border: 1px solid rgba(159, 170, 235, 0.35);
 		display: grid;
 		gap: 1rem;
-		box-shadow: 0 20px 45px rgba(6, 12, 34, 0.35);
-		backdrop-filter: blur(10px);
+		box-shadow: 0 20px 45px rgba(173, 187, 255, 0.28);
+		backdrop-filter: blur(14px);
 	}
 
 	.card__title {
 		margin: 0;
 		font-size: 1.1rem;
 		font-weight: 600;
-		color: #f6f7ff;
+		color: #2c2d64;
 	}
 
 	.card__body {
 		margin: 0;
-		color: rgba(210, 218, 255, 0.78);
+		color: rgba(76, 85, 120, 0.85);
 		line-height: 1.65;
 		font-size: 0.98rem;
 	}
@@ -487,9 +488,9 @@
 		margin-top: auto;
 		padding: 4rem 1.5rem;
 		text-align: center;
-		color: rgba(170, 180, 220, 0.7);
+		color: rgba(80, 86, 130, 0.9);
 		font-size: 0.9rem;
-		background: rgba(5, 6, 15, 0.9);
+		background: rgba(242, 243, 255, 0.95);
 	}
 
 	@media (max-width: 720px) {
