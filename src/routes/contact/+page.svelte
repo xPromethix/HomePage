@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   />
 </svelte:head>
@@ -26,10 +26,9 @@
 
   <div class="contact__card">
     <span class="contact__eyebrow">Contact</span>
-    <h1>Let&rsquo;s build the next wave together.</h1>
+    <h1>次の波を、一緒に創り出しましょう。</h1>
     <p>
-      Start a conversation with Promethix and discover how fluid simulations, realtime graphics, and
-      interactive storytelling can elevate your launch.
+      Promethixと対話を始め、流体シミュレーションやリアルタイムグラフィックス、インタラクティブなストーリーテリングがローンチ体験をどのように高められるかをご体感ください。
     </p>
     <a class="contact__email" href="mailto:hello@promethix.jp">hello@promethix.jp</a>
     <a class="contact__home" href={resolve('/')}>← Return to home</a>
@@ -39,7 +38,7 @@
 <style>
   :global(body) {
     margin: 0;
-    font-family: 'Inter', 'Noto Sans JP', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    font-family: 'Noto Sans JP', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
       sans-serif;
     background: #04040b;
     color: rgba(240, 245, 255, 0.92);
@@ -129,14 +128,14 @@
     font-size: 0.75rem;
     color: rgba(191, 199, 255, 0.65);
     font-weight: 600;
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-family: 'Space Grotesk', 'Noto Sans JP', 'Inter', sans-serif;
   }
 
   h1 {
     margin: 0;
     font-size: clamp(2rem, 4vw, 2.8rem);
     line-height: 1.15;
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-family: 'Space Grotesk', 'Noto Sans JP', 'Inter', sans-serif;
     color: #f8f9ff;
   }
 

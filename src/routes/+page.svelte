@@ -228,7 +228,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link
-		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap"
 		rel="stylesheet"
 	/>
 </svelte:head>
@@ -240,55 +240,48 @@
 		</div>
 		<div class="hero__content">
 			<span class="eyebrow">Promethix</span>
-			<h1>We orchestrate fluid, immersive worlds for ambitious brands.</h1>
+			<h1>大胆なブランドのために、流体的で没入感のある世界をプロデュースします。</h1>
 			<p class="hero__lead">
-				Promethix blends advanced simulation, spatial storytelling, and adaptive interfaces to launch
-				experiences that feel alive. We help visionary teams visualize the future before it arrives.
+				Promethixは高度なシミュレーション、空間的ストーリーテリング、適応型インターフェースを融合させ、生きもののように変化する体験を設計します。私たちは、先進的なチームが未来を到来前に可視化できるよう伴走します。
 			</p>
 			<div class="hero__actions">
 				<a class="btn btn--primary" href="#about">Discover Promethix</a>
-			<a class="btn btn--outline" href={resolve('/contact')}>Contact</a>
+				<a class="btn btn--outline" href={resolve('/contact')}>Contact</a>
 			</div>
 		</div>
 	</section>
 
 	<section id="about" class="about">
 		<div class="about__intro">
-			<h2>Designing the interface between innovation and emotion.</h2>
+			<h2>イノベーションと感性をつなぐインターフェースをデザインします。</h2>
 			<p>
-				We are a multidisciplinary collective of technologists, artists, and strategists. With Three.js
-				in our toolkit, we prototype atmospheres, interactions, and visual narratives that distill your
-				boldest ideas into unforgettable digital touchpoints.
+				私たちはエンジニア、アーティスト、ストラテジストで構成された学際的なコレクティブです。Three.jsを駆使し、空気感やインタラクション、ビジュアルストーリーをプロトタイピングし、大胆なアイデアを忘れられないデジタル体験へと昇華させます。
 			</p>
 		</div>
 
 		<div class="about__grid">
 			<article class="card">
-				<h3 class="card__title">Immersive Brand Launches</h3>
+				<h3 class="card__title">没入型ブランドローンチ</h3>
 				<p class="card__body">
-					From experiential microsites to flagship portal experiences, we choreograph every pixel with
-					cinematic pacing and fluid dynamics, revealing your story in motion.
+					体験型マイクロサイトからフラッグシップのポータルまで、流体ダイナミクスとシネマティックな演出でピクセルを指揮し、物語を躍動させます。
 				</p>
 			</article>
 			<article class="card">
-				<h3 class="card__title">Realtime Visualization</h3>
+				<h3 class="card__title">リアルタイムビジュアライゼーション</h3>
 				<p class="card__body">
-					Our team fuses realtime rendering with data-driven narrative systems, translating complexity
-					into clarity for executive briefings and investor demos.
+					リアルタイムレンダリングとデータドリブンなナラティブを融合し、経営陣や投資家向けのプレゼンテーションで複雑さを明快さへと翻訳します。
 				</p>
 			</article>
 			<article class="card">
-				<h3 class="card__title">Experience Prototyping</h3>
+				<h3 class="card__title">エクスペリエンスプロトタイピング</h3>
 				<p class="card__body">
-					We iterate rapidly with interactive prototypes, ensuring the final experience balances
-					awe-inspiring aesthetics with measurable business outcomes.
+					インタラクティブなプロトタイプを素早く反復し、驚きに満ちた美しさと測定可能なビジネス成果の両立を実現します。
 				</p>
 			</article>
 			<article class="card">
-				<h3 class="card__title">Partnerships &amp; Labs</h3>
+				<h3 class="card__title">パートナーシップとラボ</h3>
 				<p class="card__body">
-					Promethix embeds alongside your team, creating knowledge transfer programs and innovation labs
-					that uplift internal capabilities long after launch.
+					Promethixはチームに伴走し、ナレッジトランスファーやイノベーションラボを設計することで、ローンチ後も組織の能力を高め続けます。
 				</p>
 			</article>
 		</div>
@@ -302,7 +295,7 @@
 <style>
 	:global(body) {
 		margin: 0;
-		font-family: 'Inter', 'Noto Sans JP', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		font-family: 'Noto Sans JP', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
 			sans-serif;
 		color: #1e1f36;
 		background: radial-gradient(circle at 18% 10%, #f5f7ff 0%, #e6f3ff 45%, #dbe8ff 100%);
@@ -361,14 +354,14 @@
 		display: inline-block;
 		color: rgba(108, 116, 172, 0.7);
 		font-weight: 600;
-		font-family: 'Space Grotesk', 'Inter', sans-serif;
+		font-family: 'Space Grotesk', 'Noto Sans JP', 'Inter', sans-serif;
 	}
 
 	h1 {
 		margin: 0;
 		font-size: clamp(2.9rem, 6vw, 5rem);
 		line-height: 1.05;
-		font-family: 'Space Grotesk', 'Inter', sans-serif;
+		font-family: 'Space Grotesk', 'Noto Sans JP', 'Inter', sans-serif;
 		color: #262453;
 	}
 
@@ -376,7 +369,7 @@
 		font-size: clamp(2rem, 3.5vw, 3.1rem);
 		line-height: 1.1;
 		margin: 0;
-		font-family: 'Space Grotesk', 'Inter', sans-serif;
+		font-family: 'Space Grotesk', 'Noto Sans JP', 'Inter', sans-serif;
 		color: #2e2b63;
 	}
 
@@ -475,6 +468,7 @@
 		font-size: 1.1rem;
 		font-weight: 600;
 		color: #2c2d64;
+		font-family: 'Space Grotesk', 'Noto Sans JP', 'Inter', sans-serif;
 	}
 
 	.card__body {
