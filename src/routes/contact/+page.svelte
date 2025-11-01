@@ -30,7 +30,7 @@
     <p>
       Promethixと対話を始め、流体シミュレーションやリアルタイムグラフィックス、インタラクティブなストーリーテリングがローンチ体験をどのように高められるかをご体感ください。
     </p>
-    <a class="contact__email" href="mailto:hello@promethix.jp">hello@promethix.jp</a>
+    <a class="contact__email" href="mailto:primestudio.x0ttr@gmail.com">primestudio.x0ttr@gmail.com</a>
     <a class="contact__home" href={resolve('/')}>← Return to home</a>
   </div>
 </section>
