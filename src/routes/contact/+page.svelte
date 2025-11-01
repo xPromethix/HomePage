@@ -26,10 +26,7 @@
 
   <div class="contact__card">
     <span class="contact__eyebrow">Contact</span>
-    <h1>次の波を、一緒に創り出しましょう。</h1>
-    <p>
-      Promethixと対話を始め、流体シミュレーションやリアルタイムグラフィックス、インタラクティブなストーリーテリングがローンチ体験をどのように高められるかをご体感ください。
-    </p>
+    <h1>Let's create the future together.</h1>
     <a class="contact__email" href="mailto:primestudio.x0ttr@gmail.com">primestudio.x0ttr@gmail.com</a>
     <a class="contact__home" href={resolve('/')}>← Return to home</a>
   </div>
